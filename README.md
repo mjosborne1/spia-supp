@@ -46,4 +46,4 @@
    * CodeSystem Supplement outputs to `your_data_folder/out/CodeSystemSupplement-template.json` by default.
 
 ### Testing
-   * To see the results of applying the CS Supplement to a ValueSet of all members of the SPIA Requesting Ref Set use this query in Postman:  `{{url}}/ValueSet/$expand?url=http://erequestingexample.org.au/fhir/ValueSet/rcpa-spia-valueset-with-supplemental-terms&includeDesignations=true&filter` where url is a variable for your ontoserver endpoint.
+   * To see the results of applying the CS Supplement to a ValueSet of all members of the SPIA Requesting Ref Set use this query in Postman:  `{{url}}/ValueSet/$expand?url=http://erequestingexample.org.au/fhir/ValueSet/rcpa-spia-valueset-with-supplemental-terms&includeDesignations=true` where url is a variable for your ontoserver endpoint.
