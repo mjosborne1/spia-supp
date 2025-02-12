@@ -130,7 +130,7 @@ def build_codesystem_supplement(infile,outdir,endpoint,templates_path,encoding):
     Build a SNOMED CT codesystem supplement of designations for the RCPA Requesting Ref Set
     """
     print(f'...Building CodeSystem Supplement')
-    cs_sup_file = os.path.join(outdir,"CodeSystemSupplement-template.json")
+    cs_sup_file = os.path.join(outdir,"SPIARequestingCodeSystemSupplement.json")
     
     # Read the TSV file
     df = pd.read_csv(infile, skipinitialspace=True, sep='\t',dtype={'RCPA Preferred term':str,'RCPA Synonyms':str,'Terminology binding (SNOMED CT-AU)':str,'SNOMED CT Fully Specified':str}, encoding=encoding)
