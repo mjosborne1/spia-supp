@@ -1,0 +1,38 @@
+{
+    "resourceType": "ValueSet",
+    "status": "active",
+    "id": "rcpa-spia-valueset-with-supplemental-terms",
+    "extension" : [
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+          "valueCanonical" : "http://erequestingexample.org.au/fhir/CodeSystem/rcpa-spia-pathology-requesting-supplement|20241231"
+        }
+    ],
+    "url": "http://erequestingexample.org.au/fhir/ValueSet/rcpa-spia-valueset-with-supplemental-terms",
+    "version": "20241031",
+    "name": "RCPASPIARequestingPathologywithsupplementalterms",
+    "title": "RCPA SPIA Requesting Pathology with supplemental terms",
+    "experimental": false,
+    "date": "2024-11-30",
+    "publisher": "Sparked",
+    "contact": [
+        {
+        "telecom": [
+            {
+            "system": "email",
+            "value": "help@sparked.csiro.au"
+            }
+        ]
+        }
+    ],
+  "description": "Supports the recording of pathology test requests.\n\nThis reference set can be used:\n\n *  By developers of clinical information systems that are capable of generating requests for pathology tests\n *  By pathology systems which may process incoming requests for tests coded using this reference set\n *  In implementations requiring a standardised list of requestable pathology tests used within Australia\n\n**Target client:** This reference set can be used by developers whose systems document or capture pathology test names.",
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://snomed.info/sct/32506021000036107?fhir_vs=refset/1072351000168102"
+        ]
+      }
+    ]
+  }
+}

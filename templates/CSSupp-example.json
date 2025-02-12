@@ -1,0 +1,58 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "snomed-ct-supplement",
+  "url": "http://example.org/fhir/CodeSystem/snomed-ct-supplement",
+  "version": "1.0",
+  "name": "SnomedCtSupplement",
+  "title": "SNOMED CT Supplement",
+  "status": "active",
+  "experimental": false,
+  "date": "2024-11-14",
+  "publisher": "Example Publisher",
+  "contact": [
+    {
+      "name": "Example Publisher",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@example.org"
+        }
+      ]
+    }
+  ],
+  "description": "A supplement to SNOMED CT adding additional designations.",
+  "content": "supplement",
+  "supplements": "http://snomed.info/sct",
+  "concept": [
+    {
+      "code": "270976003",
+      "display": "Alpha 1-antitrypsin",
+      "designation": [
+        {
+          "language": "en",
+          "use": {
+            "system": "http://terminology.hl7.org/CodeSystem/designation-use",
+            "code": "synonym"
+          },
+          "value": "Alpha 1-antitrypsin"
+        },
+        {
+          "language": "en",
+          "use": {
+            "system": "http://terminology.hl7.org/CodeSystem/designation-use",
+            "code": "synonym"
+          },
+          "value": "A1AT"
+        },
+        {
+          "language": "en",
+          "use": {
+            "system": "http://terminology.hl7.org/CodeSystem/designation-use",
+            "code": "synonym"
+          },
+          "value": "AAT"
+        }
+      ]
+    }
+  ]
+}

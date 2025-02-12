@@ -1,0 +1,15 @@
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.pyc
+
+# vs code ignores
+launch.json
+
+# Environment folders
+.venv/
+
+# other folders
+logs/

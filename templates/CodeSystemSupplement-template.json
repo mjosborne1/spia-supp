@@ -1,0 +1,24 @@
+{
+    "resourceType": "CodeSystem",         
+    "url": "http://erequestingexample.org.au/fhir/CodeSystem/rcpa-spia-pathology-requesting-supplement",
+    "id": "rcpa-spia-pathology-requesting-supplement",
+    "version": "20241231",
+    "name": "RCPA SPIA Pathology Requesting Supplement",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-10-31",
+    "publisher": "CSIRO",
+    "contact": [
+        {
+            "name": "Sparked",
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "http://sparked.csiro.au"
+                }
+            ]
+        }
+    ],
+    "content": "supplement",
+    "supplements": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131"
+}
