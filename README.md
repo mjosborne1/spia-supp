@@ -12,7 +12,7 @@
    * `pip install -r requirements.txt`
 
 ### How to create the data folder and add the SPIA Terminology file
-   * `python spia-supp` will create any required folders
+   * `python main.py` will create any required folders and fail silently
    * Save a copy of the latest RCPA resources and extract the file called `RCPA SPIA Requesting Pathology Terminology Reference Set July 2024.xlsx` or whatever the latest version is called.
    * Open the xlsx file in Excel and save it as a tab separated file e.g. `RCPA SPIA Requesting Pathology Terminology December 2024.txt`  in the `in` folder e.g. `/home/user/data/spia/in`
 
