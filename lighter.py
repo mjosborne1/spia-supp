@@ -4,7 +4,7 @@
 
 import json
 import re
-import urllib
+import urllib.parse
 import numpy as np
 import pandas as pd
 import logging
@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 def is_numeric(value):
     if pd.isna(value):
         return False
-    elif isinstance(value, np.float64):
+    elif isinstance(value, (float, np.floating)):
         print("value is a float {0}".format(value))
         return False
     else:
@@ -56,10 +56,12 @@ def validate_concept(endpoint, code, display=None):
   response = get(query, headers=headers) 
   data =  response.json()
   result = evaluate(data,"parameter.where(name = 'result').valueBoolean")
-  if result[0] == True:
+  if isinstance(result, list) and len(result) > 0 and result[0] == True:
     display = evaluate(data,"parameter.where(name = 'display').valueString")
-    return [ result[0], display[0] ]
-  return [ result[0], "" ]
+    if isinstance(display, list) and len(display) > 0:
+        return [ result[0], display[0] ]
+    return [ result[0], "" ]
+  return [ False, "" ]
 
 
 def clean_string(s):
@@ -156,9 +158,11 @@ def build_codesystem_supplement(infile,outdir,endpoint,templates_path,encoding):
         cs.url = meta.get('url')
         cs.copyright = meta.get('copyright')
         cs.experimental = meta.get('experimental')
-        cs.content = meta.get('content')
+        cs.content = "supplement"  # type: ignore  # Ensure content is explicitly set to supplement
         cs.supplements = meta.get('supplements')
-        cs.concept = []        
+        # Initialize concept list
+        if not hasattr(cs, 'concept') or cs.concept is None:
+            cs.concept = []  # type: ignore        
        
         for code, details in snomed_dict.items():
             if not is_numeric(code):
@@ -170,7 +174,7 @@ def build_codesystem_supplement(infile,outdir,endpoint,templates_path,encoding):
             if display_name == "":
                 logger.info(f'{code} is not in SNOMED CT, skipping')
                 continue
-            concept.designation = [] 
+            concept.designation = []  # type: ignore 
             if details and details['synonyms']:
                 for pseudonym in details['synonyms']:
                     if pseudonym and pseudonym != "" and pseudonym != "nan":
@@ -181,15 +185,15 @@ def build_codesystem_supplement(infile,outdir,endpoint,templates_path,encoding):
                             continue
                         logger.info(f'{code} {pseudonym} is not in terminology, add it to the supplement')
                         designation = codesystem.CodeSystemConceptDesignation()
-                        designation.language = "en"
+                        designation.language = "en"  # type: ignore
                         designation.value = pseudonym
                         use = coding.Coding() 
-                        use.system = "http://snomed.info/sct"
-                        use.code =  "900000000000013009"
-                        use.display = "Synonym"                    
-                        designation.use = use
-                        concept.designation.append(designation)                       
-                cs.concept.append(concept)
+                        use.system = "http://snomed.info/sct"  # type: ignore
+                        use.code =  "900000000000013009"  # type: ignore
+                        use.display = "Synonym"  # type: ignore
+                        designation.use = use  # type: ignore
+                        concept.designation.append(designation)  # type: ignore
+                cs.concept.append(concept)  # type: ignore
         # Dump the CodeSystem Supplement to json file for manual review
         with open(cs_sup_file, "w") as f:
             json.dump(cs.as_json(), f, indent=2)
@@ -224,4 +228,5 @@ def run_main(infile,outdir,endpoint,template,encoding):
     csupp = build_codesystem_supplement(infile,outdir,endpoint,template,encoding)    
     logger.info(f'Built CodeSystem Supplement, returned {csupp}')
     vs_status = create_spia_valueset(endpoint)
-    logger.info(f'Built SPIA ValueSet, returned {csupp}')
+    logger.info(f'Creation of SPIA ValueSet, returned {vs_status}')
+

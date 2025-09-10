@@ -13,8 +13,8 @@
 
 ### How to create the data folder and add the SPIA Terminology file
    * `python main.py` will create any required folders and fail silently
-   * Save a copy of the latest RCPA resources and extract the file called `RCPA SPIA Requesting Pathology Terminology Reference Set July 2024.xlsx` or whatever the latest version is called.
-   * Open the xlsx file in Excel and save it as a tab separated file e.g. `RCPA SPIA Requesting Pathology Terminology December 2024.txt`  in the `in` folder e.g. `/home/user/data/spia/in`
+   * Save a copy of the latest RCPA resources and extract the file called `RCPA SPIA Requesting Pathology Terminology Reference Set July 2025.xlsx` or whatever the latest version is called.
+   * Open the xlsx file in Excel and save it as a tab separated file e.g. `RCPA SPIA Requesting Pathology Terminology December 2025.txt`  in the `in` folder e.g. `/home/user/data/spia/in`
 
 
 ### How to run the script   
@@ -22,7 +22,7 @@
       * Mac/Linux/WSL: `source ./.venv/bin/activate`
       * Windows CMD/Powershell: `.\.venv\Scripts\activate`
    * `python main.py --infile your_data_folder/in/YourSPIATerminologyTSV.txt` 
-      e.g. `python main.py -i "/home/user/data/spia/in/RCPA SPIA Requesting Pathology Terminology December 2024.txt"` 
+      e.g. `python main.py -i "/home/user/data/spia/in/RCPA SPIA Requesting Pathology Terminology December 2025.txt"` 
    * Note: The script will attempt to publish by default to a local instance of ontoserver running on http://localhost:8080 so be sure to change to your own instance or the R4 public sandbox.
    * Adjust the templates so that the url of the CodeSystem Supplements and ValueSets match your usage. They default to example urls.     
    ```

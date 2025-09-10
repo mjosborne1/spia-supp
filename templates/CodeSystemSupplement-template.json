@@ -1,24 +1,24 @@
 {
     "resourceType": "CodeSystem",         
-    "url": "http://erequestingexample.org.au/fhir/CodeSystem/rcpa-spia-pathology-requesting-supplement",
-    "id": "rcpa-spia-pathology-requesting-supplement",
-    "version": "20241231",
-    "name": "RCPA SPIA Pathology Requesting Supplement",
-    "status": "draft",
-    "experimental": true,
-    "date": "2024-10-31",
+    "url": "http://mylaborders.example.com/fhir/CodeSystem/rcpa-spia-pathology-requesting-supplement",
+    "id": "mylaborders-rcpa-spia-requesting-supplement",
+    "version": "20250731",
+    "name": "My Lab Orders RCPA SPIA Pathology Requesting Supplement",
+    "status": "active",
+    "experimental": false,
+    "date": "2025-07-31",
     "publisher": "CSIRO",
     "contact": [
         {
-            "name": "Sparked",
+            "name": "AEHRC",
             "telecom": [
                 {
                     "system": "url",
-                    "value": "http://sparked.csiro.au"
+                    "value": "http://aehrc.csiro.au"
                 }
             ]
         }
     ],
     "content": "supplement",
-    "supplements": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131"
+    "supplements": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250731"
 }

@@ -8,7 +8,7 @@ from datetime import datetime
 def main():
     homedir=os.environ['HOME']
     parser = argparse.ArgumentParser()
-    infiledefault=os.path.join(homedir,"data","spia","in","RCPA SPIA Requesting Pathology Terminology December 2024.txt")
+    infiledefault=os.path.join(homedir,"data","spia","in","RCPA SPIA Requesting Pathology Terminology Reference Set June 2025.txt")
     outdirdefault=os.path.join(homedir,"data","spia","out")
     logsdir = os.path.join('.','logs')
     path_exists(logsdir)

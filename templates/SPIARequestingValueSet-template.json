@@ -1,20 +1,20 @@
 {
     "resourceType": "ValueSet",
     "status": "active",
-    "id": "rcpa-spia-valueset-with-supplemental-terms",
+    "id": "mylaborders-rcpa-spia-valueset",
     "extension" : [
         {
           "url" : "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-          "valueCanonical" : "http://erequestingexample.org.au/fhir/CodeSystem/rcpa-spia-pathology-requesting-supplement|20241231"
+          "valueCanonical" : "http://mylaborders.example.com/fhir/CodeSystem/rcpa-spia-pathology-requesting-supplement|20250731"
         }
     ],
-    "url": "http://erequestingexample.org.au/fhir/ValueSet/rcpa-spia-valueset-with-supplemental-terms",
-    "version": "20241031",
+    "url": "http://mylaborders.example.com/fhir/ValueSet/rcpa-spia-valueset-with-supplemental-terms",
+    "version": "20250731",
     "name": "RCPASPIARequestingPathologywithsupplementalterms",
     "title": "RCPA SPIA Requesting Pathology with supplemental terms",
     "experimental": false,
-    "date": "2024-11-30",
-    "publisher": "Sparked",
+    "date": "2025-07-31",
+    "publisher": "AEHRC",
     "contact": [
         {
         "telecom": [
